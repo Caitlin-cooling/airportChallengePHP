@@ -11,5 +11,11 @@
       $airport = new Airport;
       $this -> assertEquals(20, $airport->capacity());
     }
+
+    public function testAirportCapacityCanBeChanged()
+    {
+      $airport = new Airport(5);
+      $this -> assertEquals(5, $airport->capacity());
+    }
   }
 ?>
