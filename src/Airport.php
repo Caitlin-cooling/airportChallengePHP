@@ -13,5 +13,9 @@ final class Airport
   {
     return $this->capacity;
   }
+
+  public function isFull() {
+    return false;
+  }
 }
 ?>

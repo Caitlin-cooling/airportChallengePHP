@@ -17,5 +17,11 @@
       $airport = new Airport(5);
       $this -> assertEquals(5, $airport->capacity());
     }
+
+    public function testAirportIsNotFull()
+    {
+      $airport = new Airport;
+      $this->assertEquals(false, $airport->isFull());
+    }
   }
 ?>
