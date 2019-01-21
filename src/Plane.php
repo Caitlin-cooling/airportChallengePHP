@@ -13,5 +13,10 @@
     {
       $this->status = 'Flying';
     }
+
+    public function land()
+    {
+      $this->status = 'Landed';
+    }
   }
 ?>
