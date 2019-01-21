@@ -28,5 +28,10 @@ final class Airport
   {
     $this->hangar += 1;
   }
+
+  public function takeOffPlane()
+  {
+    $this->hangar -= 1;
+  }
 }
 ?>
