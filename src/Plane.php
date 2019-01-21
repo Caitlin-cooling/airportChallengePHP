@@ -3,9 +3,10 @@
 
   final class Plane
   {
+    var $status = 'Landed';
     public function status()
     {
-      return 'Landed';
+      return $this->status;
     }
   }
 ?>
