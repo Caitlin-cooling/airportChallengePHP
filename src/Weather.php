@@ -3,9 +3,11 @@
 
   final class Weather
   {
+    var $weatherArray = array('Sunny', 'Sunny', 'Sunny', 'Sunny', 'Stormy');
+
     public function today()
     {
-      return 'Sunny';
+      return $this->weatherArray[1];
     }
   }
 ?>
