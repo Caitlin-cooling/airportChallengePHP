@@ -15,6 +15,11 @@ final class Airport
     return $this->capacity;
   }
 
+  public function hangarCount()
+  {
+    return $this->hangar;
+  }
+
   public function isFull()
   {
     if($this->hangar >= $this->capacity) {
