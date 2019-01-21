@@ -4,6 +4,7 @@ declare(strict_types=1);
 final class Airport
 {
   var $capacity;
+  var $hangar = 0;
   public function __construct($capacity = 20)
   {
     $this->capacity = $capacity;
@@ -14,8 +15,18 @@ final class Airport
     return $this->capacity;
   }
 
-  public function isFull() {
-    return false;
+  public function isFull()
+  {
+    if($this->hangar >= $this->capacity) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function landPlane()
+  {
+    $this->hangar += 1;
   }
 }
 ?>

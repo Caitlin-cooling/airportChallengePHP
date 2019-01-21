@@ -23,5 +23,14 @@
       $airport = new Airport;
       $this->assertEquals(false, $airport->isFull());
     }
+
+    public function testAirportIsFullWhen3PlanesHaveLanded()
+    {
+      $airport = new Airport(3);
+      $airport->landPlane();
+      $airport->landPlane();
+      $airport->landPlane();
+      $this->assertEquals(true, $airport->isFull());
+    }
   }
 ?>
