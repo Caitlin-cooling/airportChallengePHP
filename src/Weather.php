@@ -7,7 +7,8 @@
 
     public function today()
     {
-      return $this->weatherArray[1];
+      $randIndex = array_rand($this->weatherArray);
+      return $this->weatherArray[$randIndex];
     }
   }
 ?>

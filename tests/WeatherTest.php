@@ -9,6 +9,9 @@
     public function testWeatherIsSunny()
     {
       $weather = new Weather;
+      $stub = $this->createMock(ArrayObject::class);
+      $stub->method('array_rand')
+           ->willReturn('Sunny');
       $this-> assertEquals('Sunny', $weather->today());
     }
   }
