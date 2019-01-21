@@ -8,5 +8,10 @@
     {
       return $this->status;
     }
+
+    public function takeOff()
+    {
+      $this->status = 'Flying';
+    }
   }
 ?>
