@@ -1,7 +1,7 @@
 <?php
   declare(strict_types=1);
 
-  final class Weather
+  class Weather
   {
     var $weatherArray = array('Sunny', 'Sunny', 'Sunny', 'Sunny', 'Stormy');
 
