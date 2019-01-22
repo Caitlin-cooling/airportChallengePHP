@@ -26,5 +26,11 @@
       $this->assertEquals('Flying', $this->plane->status());
       $this->assertEquals(-1, $this->airport->hangarCount());
     }
+
+    public function testDefaultAirportCapacityCanBeChanged()
+    {
+      $airport = new Airport(5);
+      $this->assertEquals(5, $airport->capacity());
+    }
   }
  ?>
