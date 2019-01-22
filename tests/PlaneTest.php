@@ -16,7 +16,8 @@
     public function testStatusIsChangesToFlyingWhenPlaneTakesOff()
     {
       $plane = new Plane;
-      $plane->takeOff();
+      $airport = new Airport();
+      $plane->takeOff($airport);
       $this->assertEquals('Flying', $plane->status());
     }
 
@@ -31,8 +32,8 @@
     public function testStatusChangesToLandedWhenPlaneLands()
     {
       $plane = new Plane;
-      $plane->takeOff();
       $airport = new Airport(1);
+      $plane->takeOff($airport);
       $plane->land($airport);
       $this->assertEquals('Landed', $plane->status());
     }

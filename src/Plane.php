@@ -10,8 +10,9 @@
       return $this->status;
     }
 
-    public function takeOff()
+    public function takeOff($airport)
     {
+      $airport->takeOffPlane();
       $this->status = 'Flying';
     }
 
