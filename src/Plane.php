@@ -1,5 +1,6 @@
 <?php
   declare(strict_types=1);
+  require_once __DIR__ . "/../src/Airport.php";
 
   final class Plane
   {
@@ -14,9 +15,14 @@
       $this->status = 'Flying';
     }
 
-    public function land()
+    public function land($airport)
     {
-      $this->status = 'Landed';
+      if($airport->isFull()) {
+        return 'Airport is full, cannot land plane';
+      } else {
+        $airport->landPlane();
+        $this->status = 'Landed';
+      }
     }
   }
 ?>

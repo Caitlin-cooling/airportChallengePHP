@@ -4,7 +4,7 @@
 
   use PHPUnit\Framework\TestCase;
 
-  final class AirportTest extends TestCase
+  final class TestAirport extends TestCase
   {
     public function testAirportHasDefaultCapacityOf20()
     {

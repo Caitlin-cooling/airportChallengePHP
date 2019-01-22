@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-final class Airport
+class Airport
 {
   var $capacity;
   var $hangar = 0;
