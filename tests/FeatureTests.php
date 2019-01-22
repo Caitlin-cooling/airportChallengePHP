@@ -1,0 +1,23 @@
+<?php
+  declare(strict_types=1);
+  require_once('classes.php');
+
+  use PHPUnit\Framework\TestCase;
+
+  final class FeatureTests extends TestCase
+  {
+    protected function setUp()
+    {
+      $this->airport = new Airport;
+      $this->plane = new Plane;
+      $this->weather = new Weather;
+    }
+
+    public function testPlaneCanLandAtAirport()
+    {
+      $this->plane->takeOff($this->airport, $this->weather);
+      $this->plane->land($this->airport, $this->weather);
+      $this->assertEquals('Landed', $this->plane->status());
+    }
+  }
+ ?>
