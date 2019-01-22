@@ -6,43 +6,48 @@
 
   final class TestAirport extends TestCase
   {
+
+    protected function setUp()
+    {
+      $this->airport = new Airport;
+    }
+
     public function testAirportHasDefaultCapacityOf20()
     {
-      $airport = new Airport;
-      $this -> assertEquals(20, $airport->capacity());
+      $this -> assertEquals(20, $this->airport->capacity());
     }
 
     public function testAirportCapacityCanBeChanged()
     {
-      $airport = new Airport(5);
-      $this -> assertEquals(5, $airport->capacity());
+      $this->airport = new Airport(5);
+      $this -> assertEquals(5, $this->airport->capacity());
     }
 
     public function testAirportIsNotFull()
     {
-      $airport = new Airport;
-      $this->assertEquals(false, $airport->isFull());
+      $this->airport = new Airport;
+      $this->assertEquals(false, $this->airport->isFull());
     }
 
     public function testAirportIsFullWhen3PlanesHaveLanded()
     {
-      $airport = new Airport(3);
-      $airport->landPlane();
-      $airport->landPlane();
-      $airport->landPlane();
-      $this->assertEquals(true, $airport->isFull());
-      $this->assertEquals(3, $airport->hangarCount());
+      $this->airport = new Airport(3);
+      $this->airport->landPlane();
+      $this->airport->landPlane();
+      $this->airport->landPlane();
+      $this->assertEquals(true, $this->airport->isFull());
+      $this->assertEquals(3, $this->airport->hangarCount());
     }
 
     public function testAirportIsNotFullWhen3PlanesHaveLandedAndOneHasTakenOff()
     {
-      $airport = new Airport(3);
-      $airport->landPlane();
-      $airport->landPlane();
-      $airport->landPlane();
-      $airport->takeOffPlane();
-      $this->assertEquals(false, $airport->isFull());
-      $this->assertEquals(2, $airport->hangarCount());
+      $this->airport = new Airport(3);
+      $this->airport->landPlane();
+      $this->airport->landPlane();
+      $this->airport->landPlane();
+      $this->airport->takeOffPlane();
+      $this->assertEquals(false, $this->airport->isFull());
+      $this->assertEquals(2, $this->airport->hangarCount());
     }
   }
 ?>

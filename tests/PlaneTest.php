@@ -7,35 +7,35 @@
 
   final class TestPlane extends TestCase
   {
+
+    protected function setUp()
+    {
+      $this->plane = new Plane;
+      $this->airport = new Airport(1);
+    }
+
     public function testPlaneStatusDefaultsToLanded()
     {
-      $plane = new Plane;
-      $this->assertEquals('Landed', $plane->status());
+      $this->assertEquals('Landed', $this->plane->status());
     }
 
     public function testStatusIsChangesToFlyingWhenPlaneTakesOff()
     {
-      $plane = new Plane;
-      $airport = new Airport();
-      $plane->takeOff($airport);
-      $this->assertEquals('Flying', $plane->status());
+      $this->plane->takeOff($this->airport);
+      $this->assertEquals('Flying', $this->plane->status());
     }
 
     public function testPlaneCannotLandIfAirportIsFull()
     {
-      $plane = new Plane;
-      $airport = new Airport(1);
-      $plane->land($airport);
-      $this->assertEquals('Airport is full, cannot land plane', $plane->land($airport));
+      $this->plane->land($this->airport);
+      $this->assertEquals('Airport is full, cannot land plane', $this->plane->land($this->airport));
     }
 
     public function testStatusChangesToLandedWhenPlaneLands()
     {
-      $plane = new Plane;
-      $airport = new Airport(1);
-      $plane->takeOff($airport);
-      $plane->land($airport);
-      $this->assertEquals('Landed', $plane->status());
+      $this->plane->takeOff($this->airport);
+      $this->plane->land($this->airport);
+      $this->assertEquals('Landed', $this->plane->status());
     }
   }
 ?>
