@@ -1,6 +1,6 @@
 <?php
   declare(strict_types=1);
-  require __DIR__ . "/../src/Weather.php";
+  require_once('classes.php');
 
   use PHPUnit\Framework\TestCase;
 
