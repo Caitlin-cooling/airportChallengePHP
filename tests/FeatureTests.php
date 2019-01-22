@@ -19,5 +19,12 @@
       $this->plane->land($this->airport, $this->weather);
       $this->assertEquals('Landed', $this->plane->status());
     }
+
+    public function testPlaneCanTakeOffFromAnAirport()
+    {
+      $this->plane->takeOff($this->airport, $this->weather);
+      $this->assertEquals('Flying', $this->plane->status());
+      $this->assertEquals(-1, $this->airport->hangarCount());
+    }
   }
  ?>
